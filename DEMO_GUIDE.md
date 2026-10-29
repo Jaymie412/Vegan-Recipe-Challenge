@@ -36,5 +36,7 @@ Recipe links (raw GitHub files in this repository):
 | 5 | A, B | `create_claim(B, "Smoky Bean Chilli", pea_soup link)`; B accepts claim 2 | **UNRELATED**, no scores |
 | 6 | A, B | `create_claim(B, "Smoky Bean Chilli", missing_recipe link)`; B accepts claim 3 | UNREACHABLE |
 | 7 | any | `retry_settle(3)` | CLOSED_UNAVAILABLE, no scores |
-| 8 | B | `accept_challenge(0, claim_hash)` again | **Result: ERROR**, already settled |
+| 8 | A | `cancel_claim(id)` on any claim not yet accepted | CANCELLED, no scores |
 | 9 | any | `get_score(A)` and `get_score(B)` | each 1 win and 1 loss, `claim_ids` [0, 1] |
+
+Tip: in Studio, a write that shows **Accepted** has already worked. Don't send it again.
